@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <main>
+                <h1>Welcome Customer!</h1>
+                <p>We're giving away <span class="emphasis">free coupons</span></p>
+                <p>as token of appreciation</p>
+                <div class="redeem">
+                <% if(count !== 0 && !post_data_available){ %>
+                    <p>for the first <%= count %> customer(s)</p>
+                    <form action="/redeem" method="POST">
+                        <p>Kindly type your name:</p>
+                        <input type="text" id="name" name="name">
+                        <p><input type="submit" id="submit" value="submit"></p>
+                    </form>
+                <% } %>
+                </div>
+                <% if(post_data_available){ %>
+                    <div class="coupons">
+                        <p><span class="emphasis">50% Discount</span></p>
+                        <p class="coupon_number"><%= couponNumber %></p>
+                        <form action="/claim" method="POST" class="claim">
+                            <input type="submit" value="Claim again" id="claim">
+                        </form>
+                        <form action="/reset" method="POST" class="reset">
+                            <input type="submit" value="Reset count" id="reset">
+                        </form>
+                    </div>
+                <% } %>                
+                <% if(count < 1){ %>
+                    <div class="coupons">
+                        <p><span class="emphasis">Sorry!</span></p>
+                        <p class="unavailable">Unavailable</p>
+                        <form action="/reset" method="POST" class="claim">
+                            <input type="submit" value="Claim again" id="claim_again">
+                        </form>
+                        <form action="/reset" method="POST" class="reset">
+                            <input type="submit" value="Reset count" id="reset_again">
+                        </form>
+                    </div>
+                <% } %>
+            </main>
+        </div>
+    </body>
+</html>

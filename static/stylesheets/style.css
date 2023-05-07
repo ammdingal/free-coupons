@@ -1,0 +1,50 @@
+
+main{
+    text-align: center;
+    font-family: Calibri;
+    font-size: x-large;
+}
+    #name{
+        border: 3px solid black;
+        height: 25px;
+        width: 200px;
+    }
+    .emphasis{
+        font-weight: bold;
+    }
+    #submit{
+        background-color: green;
+        color: white;
+        box-shadow: 3px 3px black;
+        padding: 5px 20px 5px 20px;
+    }
+    .coupons{
+        background-color: #FFE599;
+        border: 5px dashed black;
+        border-radius: 25px;
+        padding-bottom: 20px;
+        margin-left: 550px;
+        margin-right: 550px;
+
+    }
+        .coupon_number, .unavailable{
+            font-size: xx-large;
+            font-weight: bold;
+        }
+        #reset, #reset_again{
+            background-color: red;
+            color: white;
+            box-shadow: 3px 3px black;
+            margin-right: 30px;
+            padding: 5px 20px 5px 20px;
+        }
+        #claim, #claim_again{
+            background-color: green;
+            color: white;
+            box-shadow: 3px 3px black;
+            margin-left: 30px;
+            padding: 5px 20px 5px 20px;
+        }
+        .claim, .reset{
+            display: inline-block;
+        }
